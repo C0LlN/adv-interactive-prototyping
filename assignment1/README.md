@@ -1,7 +1,7 @@
 ## Assignment 1
-Assignment 1 description
-[Repository README LINK](../README.md)
-[Assignment 1 Code Link](hw.py)
+Assignment 1 description  
+[Repository README LINK](../README.md)  
+[Assignment 1 Code Link](hw.py)  
 ```Python
 while True:
     M5.update()  
