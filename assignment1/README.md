@@ -51,9 +51,7 @@ while True:
 
     time.sleep_ms(100)  
 ```  
-Image link example:
+### Project outcome:
 
-List example  
-* list 1
-* list 2
-* list 3
+
+
