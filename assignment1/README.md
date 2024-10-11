@@ -17,10 +17,28 @@ When running the program initialize the RGB pin and input pin. When the value fr
 * wires
 * RGB Strip
 * toy gun and its base support
+* copper foil tape
 
-[Repository README LINK](../README.md)  
+![hardware](hardware.jpg)  
+
+### Firmware:
 [Assignment 1 Code Link](hw.py)  
+
+First, we need to set two different functions for two statuses, first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the weapon is on the base. Then we need to write a looping function to switch this two status by getting the value from pin 7.  
+
 ```Python
+while True:
+def get_rgb_color(r, g, b):
+    rgb_color = (r << 16) | (g << 8) | b
+    return rgb_color
+
+
+def color_cycle():
+    colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (0, 255, 255), (255, 0, 255)]
+    for r, g, b in colors:
+        rgb_strip.fill_color(get_rgb_color(r, g, b))
+        time.sleep_ms(500)  
+
 while True:
     M5.update()  
 
@@ -31,7 +49,7 @@ while True:
         print('Pin 7 is LOW, cycling through colors')
         color_cycle()
 
-    time.sleep_ms(100)
+    time.sleep_ms(100)  
 ```  
 Image link example:
 
