@@ -1,8 +1,16 @@
 ## Assignment 01
-Assignment 1 description:  
+### Assignment 1 description:  
 In this assignment, we are required to find an object in real life and transform it into a digital input, then connect it to an RGB light strip. This digital input can change the output, which is the state of the RGB light strip.  
 
-Concept Sketches:  
+For this, I found a toy gun from a video game, which consists of the gun itself and its base. My idea is that when the gun is not on the base, the RGB light strip will continuously emit red light, and when I place the gun on the base, the RGB light strip will start cycling through different colors.  
+
+### Concept Sketches:  
+![concept_sketches](concept_sketches.jpg)  
+
+### State Diagram:  
+
+
+
 [Repository README LINK](../README.md)  
 [Assignment 1 Code Link](hw.py)  
 ```Python
