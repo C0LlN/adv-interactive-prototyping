@@ -24,7 +24,7 @@ When running the program initialize the RGB pin and input pin. When the value fr
 ### Firmware:
 [Assignment 1 Code Link](hw.py)  
 
-First, we need to set two different functions for two statuses, first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the weapon is on the base. Then we need to write a looping function to switch this two status by getting the value from pin 7.  
+First, we need to set two different functions for two statuses, The first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the gun is on the base. Then we need to write a looping function to switch these two status by getting the value from pin 7.  
 
 ```Python
 while True:
@@ -50,8 +50,12 @@ while True:
         color_cycle()
 
     time.sleep_ms(100)  
-```  
+```
+
+### Physical Components:
+To make the toy gun work as a digital input, I need to add something to connect it to the breadboard. So I use copper foil tape to tape the button of the gun and the part of the base that holds the gun. So when I place the gun on the base, it will work like a button.  
+
 ### Project outcome:
 
-
+![outcome](outcome1.jpg)![outcome](outcome2.jpg)
 
