@@ -56,6 +56,6 @@ while True:
 To make the toy gun work as a digital input, I need to add something to connect it to the breadboard. So I use copper foil tape to tape the button of the gun and the part of the base that holds the gun. So when I place the gun on the base, it will work like a button.  
 
 ### Project outcome:
-
+[Video for the outcome](outcome.mp4)  
 ![outcome](outcome1.jpg)![outcome](outcome2.jpg)
 
