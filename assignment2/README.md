@@ -10,21 +10,49 @@ For this, I found a toy gun from a video game, which consists of the gun itself 
 ### State Diagram:  
 When running the program initialize the RGB pin and input pin. When the value from digital input is high/1, print: Pin 7 is HIGH, setting color to RED and set RGB strip to red color. Else print: Pin 7 is LOW, cycling through colors and setting RGB strip color to start looping different colors.  
 
-![state_diagram](State_Diagram.png)  
+![state_diagram](diagram.png)  
 
 ### Hardware:  
 * ATOM s3
 * wires
 * RGB Strip
-* toy gun and its base support
-* copper foil tape
+* MDF boards
+* distance senser
 
 ![hardware](hardware.jpg)  
 
 ### Firmware:
-[Assignment 1 Code Link](hw.py)  
+[Assignment 2 Code for ATOM S3 Link](code.py)  
 
 First, we need to set two different functions for two statuses, The first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the gun is on the base. Then we need to write a looping function to switch these two status by getting the value from pin 7.  
+
+```Python
+while True:
+def get_rgb_color(r, g, b):
+    rgb_color = (r << 16) | (g << 8) | b
+    return rgb_color
+
+
+def color_cycle():
+    colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (0, 255, 255), (255, 0, 255)]
+    for r, g, b in colors:
+        rgb_strip.fill_color(get_rgb_color(r, g, b))
+        time.sleep_ms(500)  
+
+while True:
+    M5.update()  
+
+    if input_pin.value() == True:  
+        print('Pin 7 is HIGH, setting color to RED')
+        rgb_strip.fill_color(0xff0000)  
+    else:  
+        print('Pin 7 is LOW, cycling through colors')
+        color_cycle()
+
+    time.sleep_ms(100)  
+```
+
+[Assignment 2 Code for Web Link](main.py)  
 
 ```Python
 while True:
