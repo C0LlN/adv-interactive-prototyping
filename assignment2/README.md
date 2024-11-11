@@ -5,7 +5,7 @@ In this assignment, we are required to find an object in real life and transform
 For this, I found a toy gun from a video game, which consists of the gun itself and its base. My idea is that when the weapon is not on the base, the RGB light strip will continuously emit red light, and when I place the gun on the base, the RGB light strip will start cycling through different colors.  
 
 ### Concept Sketches:  
-![concept_sketches](concept_sketches.jpg)  
+![concept_sketches](sketch.png)  
 
 ### State Diagram:  
 When running the program initialize the RGB pin and input pin. When the value from digital input is high/1, print: Pin 7 is HIGH, setting color to RED and set RGB strip to red color. Else print: Pin 7 is LOW, cycling through colors and setting RGB strip color to start looping different colors.  
