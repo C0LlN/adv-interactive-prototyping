@@ -19,8 +19,6 @@ When running the program initialize the RGB pin and input pin. When the value fr
 * MDF boards
 * distance senser
 
-![hardware](hardware.jpg)  
-
 ### Firmware:
 [Assignment 2 Code for ATOM S3 Link](code.py)  
 
