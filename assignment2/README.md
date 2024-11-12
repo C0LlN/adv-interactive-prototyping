@@ -8,7 +8,7 @@ To achieve this, I designed a toy inspired by the flag in the Super Mario game. 
 ![concept_sketches](sketch.png)  
 
 ### State Diagram:  
-When running the program initialize the RGB pin and input pin. When the value from digital input is high/1, print: Pin 7 is HIGH, setting color to RED and set RGB strip to red color. Else print: Pin 7 is LOW, cycling through colors and setting RGB strip color to start looping different colors.  
+When running the program initialize the RGB pin and adc pin. When ADC value is higher than 90 set RGB led strip to white, When the value is lower than 90, the strip will start looping different colors. And the same time it will print the value from ADC, when you connect to the web program, the program will read the value to control the images on the web program. When the value gets higher the image 1 will rise up and image 2 will go down, and when the value gets lower, the image 1 will go down the image 2 will rise up. At the same time, if the value go under 90, a sound will be play.
 
 ![state_diagram](diagram.png)  
 
@@ -22,7 +22,7 @@ When running the program initialize the RGB pin and input pin. When the value fr
 ### Firmware:
 [Assignment 2 Code for ATOM S3 Link](code.py)  
 
-First, we need to set two different functions for two statuses, The first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the gun is on the base. Then we need to write a looping function to switch these two status by getting the value from pin 7.  
+First, we need to set two different functions for two statuses, The first one is to keep make the strip glow white light when the value is higher than 90, and the other one is RGB looping when the value is lower than 90. Then we need to write a looping function to switch these two status by getting the value from adc.  
 
 ```Python
 def color_cycle():
@@ -64,6 +64,8 @@ while True:
 
 [Assignment 2 Code for Web Link](main.py)  
 
+For the web Program, we need to make two image moves on the y-axis based on the ADC value, and when the value goes under 90, a sound will be triggered.
+
 ```Python
 def draw():
     global sound_played
@@ -101,13 +103,14 @@ def draw():
 ```
 
 ### Physical Components:
-To make the toy gun work as a digital input, I need to add something to connect it to the breadboard. So I use copper foil tape to tape the button of the gun and the part of the base that holds the gun. So when I place the gun on the base, it will work like a button.  
+I use MDF for the main structure to build the whole thing, and I can put my LED strip and the wires in the base. Then I used a rubber band to connect Mario and the flag. I added a piece of MDF under the Mario so the distance sensor can trace it.
 
 ![physical_components](components.jpg)
 
 ### Project outcome:
-Finally, I made it work. When the gun is not on the base the RGB strip will keep glowing red light, and when I place the gun on the base, the RGB strip will start looping different color lights.
+Finally, I made it work. When I drag the Mario down, the flag will rise up and the Mario and flag on the web program will do the same thing. When Mario reaches the base, the strip starts looping colors and a sound effect will be played from the web program.
 [Video for the outcome](outcome.mp4)  
+
 ![outcome](final_1.jpg)
 ![outcome](web_1.png)
 ![outcome](final_2.jpg)
