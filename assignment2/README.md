@@ -81,13 +81,10 @@ while True:
 ### Physical Components:
 To make the toy gun work as a digital input, I need to add something to connect it to the breadboard. So I use copper foil tape to tape the button of the gun and the part of the base that holds the gun. So when I place the gun on the base, it will work like a button.  
 
-![physical_components](physical_components1.jpg)
-![physical_components](physical_components2.jpg)
-![physical_components](physical_components3.jpg)
-![physical_components](physical_components4.jpg)
+![physical_components](components.jpg)
 
 ### Project outcome:
 Finally, I made it work. When the gun is not on the base the RGB strip will keep glowing red light, and when I place the gun on the base, the RGB strip will start looping different color lights.
 [Video for the outcome](outcome.mp4)  
-![outcome](outcome1.jpg)
+![outcome](final_1.jpg)
 ![outcome](outcome2.jpg)
