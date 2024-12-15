@@ -24,7 +24,8 @@ The program operates in two main parts. The first part involves the Atom board, 
 ![hardware](hardware.jpg)  
 
 ### Firmware:
-[Assignment 1 Code Link](hw.py)  
+[Final Project ATOM Code Link1](test.py)  
+[Final Project P5 Code Link2](main.py)  
 
 First, we need to set two different functions for two statuses, The first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the gun is on the base. Then we need to write a looping function to switch these two status by getting the value from pin 7.  
 
