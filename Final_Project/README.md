@@ -97,6 +97,9 @@ if program_state == 'TITLE':
         p5.text("You Win", p5.width / 2, p5.height / 2)
 ```
 
+### Wire Connection:  
+![wire_connection](wire_connection.png)  
+
 ### Physical Components:
 I chose MDF as the main material and used a laser cutter to cut out the shapes I needed, then assembled them using super glue. For the wiring connections, I used copper foil tape as the contact points for the buttons and extended them with cardboard. This allowed me to use wires with clips to connect them to my ATOM S3. I also cut some MDF pieces and used them as bridges to connect various components.
 
