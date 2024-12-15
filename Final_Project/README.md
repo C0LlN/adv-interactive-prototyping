@@ -30,28 +30,36 @@ First, we need to set two different functions for two statuses, The first one is
 
 ```Python
 while True:
-def get_rgb_color(r, g, b):
-    rgb_color = (r << 16) | (g << 8) | b
-    return rgb_color
+    M5.update()
 
+    button1_val = button1.value()
+    button2_val = button2.value()
+    button3_val = button3.value()
+    button4_val = button4.value()
 
-def color_cycle():
-    colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (0, 255, 255), (255, 0, 255)]
-    for r, g, b in colors:
-        rgb_strip.fill_color(get_rgb_color(r, g, b))
-        time.sleep_ms(500)  
+    print(button1_val, ',', button2_val, ',', button3_val, ',', button4_val)
 
-while True:
-    M5.update()  
+    if previous_button4_state == 1 and button4_val == 0: 
+        if current_state == 0:
+            #print("Button 4 pressed: Setting duty cycle to 65.")
+            pwm1.duty(69) 
+            time.sleep(2)  
+            #print("Stopping servo.")
+            pwm1.duty(0)  
+            current_state = 1  
+        elif current_state == 1:
+            #print("Button 4 pressed: Setting duty cycle to 85.")
+            pwm1.duty(85)  
+            time.sleep(2)  
+            #print("Stopping servo.")
+            pwm1.duty(0)  
+            current_state = 0  
 
-    if input_pin.value() == True:  
-        print('Pin 7 is HIGH, setting color to RED')
-        rgb_strip.fill_color(0xff0000)  
-    else:  
-        print('Pin 7 is LOW, cycling through colors')
-        color_cycle()
+    # 更新按钮 4 的上一次状态
+    previous_button4_state = button4_val
 
-    time.sleep_ms(100)  
+    # 添加延迟，避免数据发送过快
+    time.sleep(0.1)
 ```
 
 ### Physical Components:
