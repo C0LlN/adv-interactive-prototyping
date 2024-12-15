@@ -1,5 +1,5 @@
-## Assignment 01
-### Assignment 1 description:  
+## Final Project
+### Final Project description:  
 In this final project, I decided to take my midterm project further and make it more refined. 
 
 I retained the original Mario flag mechanics, while aiming to enhance the gameplay and interactivity of the project. I plan to design devices that represent various items, structures, and enemies from the Mario games. These devices will be connected to a computer, and by reading the signals from the devices, corresponding text, images, and sounds will be output.
