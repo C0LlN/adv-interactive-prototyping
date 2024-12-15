@@ -63,35 +63,35 @@ while True:
 First, we need to set two different functions for two statuses, The first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the gun is on the base. Then we need to write a looping function to switch these two status by getting the value from pin 7.  
 
 ```Python
-while True:
-    M5.update()
+if program_state == 'TITLE':
+        if p5.millis() > 3000:
+          if not sound_played_title:
+            print('play sound')
+            #sound_mario.play()
+            sound_title.play()  
+            sound_played_title = True
+        p5.background(000)
+        p5.image(title_img, p5.width / 2, p5.height / 3, 300, 150)  
+        p5.fill(255)
+        p5.text('Start', p5.width / 2, 2 * p5.height / 3) 
+    
+    if program_state == 'DICE':
+      if random_number is not None:
+          p5.fill(0)
+          p5.text(f"{random_number} Step", p5.width / 2, p5.height / 2)
 
-    button1_val = button1.value()
-    button2_val = button2.value()
-    button3_val = button3.value()
-    button4_val = button4.value()
+    if program_state == 'QUESTION':
+      if random_image is not None:
+          p5.image(random_image, p5.width / 2, p5.height / 2, 100, 100)
 
-    print(button1_val, ',', button2_val, ',', button3_val, ',', button4_val)
+    if program_state == 'SCORE':
+        p5.fill(0, 255, 0)
+        p5.text("+10 Points", p5.width / 2, p5.height / 2)
 
-    if previous_button4_state == 1 and button4_val == 0: 
-        if current_state == 0:
-            #print("Button 4 pressed: Setting duty cycle to 65.")
-            pwm1.duty(69) 
-            time.sleep(2)  
-            #print("Stopping servo.")
-            pwm1.duty(0)  
-            current_state = 1  
-        elif current_state == 1:
-            #print("Button 4 pressed: Setting duty cycle to 85.")
-            pwm1.duty(85)  
-            time.sleep(2)  
-            #print("Stopping servo.")
-            pwm1.duty(0)  
-            current_state = 0  
-
-    previous_button4_state = button4_val
-
-    time.sleep(0.1)
+    if program_state == 'WIN':
+        p5.image(win_img, p5.width / 2, p5.height / 2, 300, 200)  
+        p5.fill(255, 0, 0)
+        p5.text("You Win", p5.width / 2, p5.height / 2)
 ```
 
 ### Physical Components:
