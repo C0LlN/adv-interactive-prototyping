@@ -5,7 +5,8 @@ In this final project, I decided to take my midterm project further and make it 
 I retained the original Mario flag mechanics, while aiming to enhance the gameplay and interactivity of the project. I plan to design devices that represent various items, structures, and enemies from the Mario games. These devices will be connected to a computer, and by reading the signals from the devices, corresponding text, images, and sounds will be output.
 
 ### Concept Sketches:  
-![concept_sketches](concept_sketches.jpg)  
+![concept_sketches](concept_sketches.png)  
+![concept_sketches](concept_sketches2.png)  
 
 ### State Diagram:  
 The program operates in two main parts. The first part involves the Atom board, which is responsible for receiving the button states and outputting signals to change the servo's model and the button states. The second part involves the computer, which reads the button signals printed by the Atom board and outputs images, text, and sounds based on those signals.
