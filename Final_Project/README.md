@@ -27,7 +27,7 @@ The program operates in two main parts. The first part involves the Atom board, 
 [Final Project ATOM Code Link1](test.py)  
 [Final Project P5 Code Link2](main.py)  
 
-First, we need to set two different functions for two statuses, The first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the gun is on the base. Then we need to write a looping function to switch these two status by getting the value from pin 7.  
+First, we need four button inputs, and connect button 4 to a 360 servo. When button 4 is pressed, the servo will start rotating to adjust the position of the flag.
 
 ```Python
 while True:
@@ -61,7 +61,8 @@ while True:
     time.sleep(0.1)
 ```
 
-First, we need to set two different functions for two statuses, The first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the gun is on the base. Then we need to write a looping function to switch these two status by getting the value from pin 7.  
+Next, we need to have p5 read the value of each button and change the program state based on the button values.
+And set what will be present on the screen for each state.
 
 ```Python
 if program_state == 'TITLE':
@@ -96,7 +97,7 @@ if program_state == 'TITLE':
 ```
 
 ### Physical Components:
-To make the toy gun work as a digital input, I need to add something to connect it to the breadboard. So I use copper foil tape to tape the button of the gun and the part of the base that holds the gun. So when I place the gun on the base, it will work like a button.  
+I chose MDF as the main material and used a laser cutter to cut out the shapes I needed, then assembled them using super glue. For the wiring connections, I used copper foil tape as the contact points for the buttons and extended them with cardboard. This allowed me to use wires with clips to connect them to my ATOM S3. I also cut some MDF pieces and used them as bridges to connect various components.
 
 ![physical_components](physical_components1.jpg)
 ![physical_components](physical_components2.jpg)
@@ -104,7 +105,7 @@ To make the toy gun work as a digital input, I need to add something to connect 
 ![physical_components](physical_components4.jpg)
 
 ### Project outcome:
-Finally, I made it work. When the gun is not on the base the RGB strip will keep glowing red light, and when I place the gun on the base, the RGB strip will start looping different color lights.
+I designed a gameplay similar to Monopoly, where players use a digital dice to determine how many spaces to move each turn. I also created some devices that trigger images, text, and sound effects when players interact with them. The player's goal is to reach the flag to achieve the final victory in the game.
 [Video for the outcome](outcome.mp4)  
 ![outcome](outcome1.jpg)
 ![outcome](outcome2.jpg)
