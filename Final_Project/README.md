@@ -55,10 +55,8 @@ while True:
             pwm1.duty(0)  
             current_state = 0  
 
-    # 更新按钮 4 的上一次状态
     previous_button4_state = button4_val
 
-    # 添加延迟，避免数据发送过快
     time.sleep(0.1)
 ```
 
