@@ -60,6 +60,40 @@ while True:
     time.sleep(0.1)
 ```
 
+First, we need to set two different functions for two statuses, The first one is to keep a red light when the weapon is not on the base support, and the other one is RGB looping when the gun is on the base. Then we need to write a looping function to switch these two status by getting the value from pin 7.  
+
+```Python
+while True:
+    M5.update()
+
+    button1_val = button1.value()
+    button2_val = button2.value()
+    button3_val = button3.value()
+    button4_val = button4.value()
+
+    print(button1_val, ',', button2_val, ',', button3_val, ',', button4_val)
+
+    if previous_button4_state == 1 and button4_val == 0: 
+        if current_state == 0:
+            #print("Button 4 pressed: Setting duty cycle to 65.")
+            pwm1.duty(69) 
+            time.sleep(2)  
+            #print("Stopping servo.")
+            pwm1.duty(0)  
+            current_state = 1  
+        elif current_state == 1:
+            #print("Button 4 pressed: Setting duty cycle to 85.")
+            pwm1.duty(85)  
+            time.sleep(2)  
+            #print("Stopping servo.")
+            pwm1.duty(0)  
+            current_state = 0  
+
+    previous_button4_state = button4_val
+
+    time.sleep(0.1)
+```
+
 ### Physical Components:
 To make the toy gun work as a digital input, I need to add something to connect it to the breadboard. So I use copper foil tape to tape the button of the gun and the part of the base that holds the gun. So when I place the gun on the base, it will work like a button.  
 
